@@ -1,0 +1,434 @@
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  background: #F0F9FF;
+  color: #0F172A;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+   LAYOUT RHYTHM SYSTEM
+========================= */
+
+section {
+  padding: 90px 0;
+}
+
+section:nth-child(even) {
+  background: rgba(255,255,255,0.25);
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #0EA5E9;
+  z-index: 9999;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 20px;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+nav a {
+  text-decoration: none;
+  color: #0F172A;
+  margin: 0 10px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #0EA5E9;
+}
+
+nav a.active {
+  color: #0EA5E9;
+  font-weight: 600;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: linear-gradient(270deg, #0EA5E9, #14B8A6, #0EA5E9);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+
+  color: white;
+  text-align: center;
+
+  padding: 150px 20px;
+
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  top: -80px;
+  left: -80px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 17px;
+  opacity: 0.92;
+  max-width: 600px;
+  margin: 0 auto 25px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+  margin: 10px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary {
+  background: white;
+  color: #0EA5E9;
+  box-shadow: 0 12px 30px rgba(14,165,233,0.25);
+}
+
+.primary:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.secondary:hover {
+  background: white;
+  color: #0EA5E9;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+  text-align: center;
+  font-size: clamp(26px, 4vw, 36px);
+  margin-bottom: 30px;
+  color: #0369A1;
+  letter-spacing: -0.4px;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.service-box,
+.project-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(16px);
+
+  padding: 26px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  transition: 0.3s ease;
+}
+
+.service-box {
+  border-left: 5px solid #14B8A6;
+}
+
+.project-card {
+  border-left: 5px solid #0EA5E9;
+}
+
+.service-box:hover,
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  background: linear-gradient(135deg, #0EA5E9, #0369A1);
+  color: white;
+
+  text-align: center;
+
+  padding: 90px 20px;
+
+  border-radius: 40px;
+
+  margin-top: 60px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing-table {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .pricing-table {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricing-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(16px);
+
+  padding: 30px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  transition: 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.featured {
+  border: 2px solid #0EA5E9;
+  box-shadow: 0 20px 50px rgba(14,165,233,0.25);
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-card ul li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* =========================
+   URGENCY SECTION
+========================= */
+
+.urgency-box {
+  background: linear-gradient(135deg, #0EA5E9, #0369A1);
+  color: white;
+
+  padding: 40px;
+  border-radius: 18px;
+
+  text-align: center;
+
+  animation: pulseBox 3s infinite;
+}
+
+.slot {
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.final-cta p {
+  max-width: 600px;
+  margin: auto;
+  color: #475569;
+}
+
+/* =========================
+   STICKY CTA
+========================= */
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  background: #0EA5E9;
+
+  text-align: center;
+  padding: 12px;
+
+  z-index: 999;
+}
+
+.sticky-cta a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseBox {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   MOBILE UX POLISH
+========================= */
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 6px 8px;
+  }
+
+  .hero {
+    padding: 110px 20px;
+    border-radius: 40px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .pricing-table {
+    grid-template-columns: 1fr;
+  }
+}
