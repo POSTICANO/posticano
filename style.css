@@ -432,3 +432,29 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   FIX PRICING BUTTON ALIGNMENT
+========================= */
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* pushes button to bottom */
+.pricing-card .btn {
+  margin-top: auto;
+}
+
+/* ensures equal height behavior */
+.pricing-card {
+  min-height: 100%;
+}
+
+
+
+
+
+
+
+
