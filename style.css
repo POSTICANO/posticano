@@ -62,6 +62,11 @@ section:nth-child(even) {
 /* =========================
    NAVBAR
 ========================= */
+nav {
+  height: 60px;
+  padding: 0 20px;
+}
+
 
 nav {
   position: sticky;
@@ -85,9 +90,9 @@ nav a {
   color: #0F172A;
   margin: 0 10px;
   font-size: 15px;
+  line-height: 1;
   transition: 0.3s;
 }
-
 nav a:hover {
   color: #0EA5E9;
 }
@@ -456,12 +461,16 @@ h3 {
    LOGO UPDATION
 ========================= */
 
-.logo img {
-  width: 40px;
-  height: auto;
-  display: block;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 
 
 
