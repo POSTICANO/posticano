@@ -431,7 +431,11 @@ h3 {
   .btn {
     width: 100%;
     max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* override inline-flex */
   }
+
 
   .pricing-table {
     grid-template-columns: 1fr;
