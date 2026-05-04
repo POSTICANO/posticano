@@ -72,7 +72,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  padding: 14px 20px;
+  padding: 6px 20px;
 
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(16px);
@@ -408,7 +408,7 @@ h3 {
 @media (max-width: 768px) {
 
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     text-align: center;
   }
@@ -457,7 +457,7 @@ h3 {
 ========================= */
 
 .logo img {
-  width: 100px;
+  width: 40px;
   height: auto;
   display: block;
 }
