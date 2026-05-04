@@ -452,8 +452,15 @@ h3 {
 }
 
 
+/* =========================
+   LOGO UPDATION
+========================= */
 
-
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
 
 
 
