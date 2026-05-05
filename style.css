@@ -189,6 +189,11 @@ nav a.active {
   color: #0EA5E9;
 }
 
+.disabled-btn {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 /* =========================
    HEADINGS
 ========================= */
@@ -436,7 +441,6 @@ h3 {
     display: flex; /* override inline-flex */
   }
 
-
   .pricing-table {
     grid-template-columns: 1fr;
   }
@@ -471,10 +475,9 @@ h3 {
 }
 
 .logo img {
-  height: 50px;
+  height: 40px;
   width: auto;
   display: block;
 }
-
 
 
