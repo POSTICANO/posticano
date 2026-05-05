@@ -160,4 +160,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  window.addEventListener("load", () => {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  });
+  /* =========================
+     TERMS CHECKBOX BUTTON CONTROL
+  ========================= */
+
+ const checkbox = document.getElementById("agreeTerms");
+const button = document.getElementById("buyBtn");
+
+const paymentLink = button.getAttribute("data-link");
+
+if (checkbox && button) {
+
+  button.classList.add("disabled-btn");
+
+  button.addEventListener("click", (e) => {
+    if (!checkbox.checked) {
+      e.preventDefault();
+      return;
+    }
+
+    window.open(paymentLink, "_blank");
+  });
+
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      button.classList.remove("disabled-btn");
+    } else {
+      button.classList.add("disabled-btn");
+    }
+  });
+
+}
 });
