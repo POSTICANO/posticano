@@ -15,18 +15,46 @@ const urlsToCache = [
   "/favicon.png"
 ];
 
+/* =========================
+   INSTALL EVENT
+========================= */
 self.addEventListener("install", event => {
+  self.skipWaiting(); // activate immediately
+
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    })
   );
 });
 
+/* =========================
+   ACTIVATE EVENT
+========================= */
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    Promise.all([
+      self.clients.claim(), // take control immediately
+      caches.keys().then(keys => {
+        return Promise.all(
+          keys.map(key => {
+            if (key !== CACHE_NAME) {
+              return caches.delete(key); // remove old cache versions
+            }
+          })
+        );
+      })
+    ])
+  );
+});
+
+/* =========================
+   FETCH EVENT (offline support)
+========================= */
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        return response || fetch(event.request);
-      })
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
   );
 });
