@@ -1,4 +1,4 @@
-const CACHE_NAME = "freelance-pwa-v1";
+const CACHE_NAME = "posticano-v1";
 
 const urlsToCache = [
   "/",
