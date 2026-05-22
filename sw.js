@@ -1,18 +1,18 @@
 const CACHE_NAME = "POSTICANO";
 
 const urlsToCache = [
-  "posticano",
-  "posticano/icons/icon-192.png",
-  "posticano/icons/icon-512.png",
-  "posticano/index.html",
-  "posticano/starter.html",
-  "posticano/business.html",
-  "posticano/custom.html",
-  "posticano/offer.html",
-  "posticano/style.css",
-  "posticano/script.js",
-  "posticano/logo.svg",
-  "posticano/favicon.png"
+  "/",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/index.html",
+  "/starter.html",
+  "/business.html",
+  "/custom.html",
+  "/offer.html",
+  "/style.css",
+  "/script.js",
+  "/logo.svg",
+  "/favicon.png"
 ];
 
 /* =========================
