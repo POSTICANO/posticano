@@ -6,11 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>POSTICANO | Freelance Web Developement Service</title>
-  <link rel="icon" type="image/svg+xml" href="/fevicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <meta name="description" content="Freelance web developer building high-converting, fast, and modern websites for businesses that want more customers.">
 
   <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#0EA5E9">
+
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PV6RDP1KFN"></script>
 <script>
@@ -296,6 +306,19 @@
   
  <!-- ================= JS ================= -->
   <script src="script.js"></script>
+
+
+		  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(reg => console.log("SW registered"))
+      .catch(err => console.log("SW failed", err));
+  });
+}
+</script>
+
 
 </body>
 </html>
