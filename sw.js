@@ -1,7 +1,7 @@
 const CACHE_NAME = "POSTICANO";
 
 const urlsToCache = [
-  "https://www.posticano.com",
+  "/icons",
   "/index.html",
   "/starter.html",
   "/business.html",
