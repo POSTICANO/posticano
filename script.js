@@ -209,7 +209,7 @@ if (checkbox && button) {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
-        .register("posticano/sw.js")
+        .register("/sw.js")
         .then(() => console.log("SW registered"))
         .catch(err => console.log("SW failed", err));
     });
