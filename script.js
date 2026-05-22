@@ -178,9 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
  const checkbox = document.getElementById("agreeTerms");
 const button = document.getElementById("buyBtn");
 
-const paymentLink = button.getAttribute("data-link");
 
 if (checkbox && button) {
+   const paymentLink = button.getAttribute("data-link");
 
   button.classList.add("disabled-btn");
 
